@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Theo Gaopalelwe - BIDA student portfolio showcasing Python, SQL, Data Analytics, Web Development, and Cloud Fundamentals">
+    <meta name="author" content="Theo Arnold Gaopalelwe">
+    <title>Theo Gaopalelwe | BIDA Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F8F9FA;
+            color: #1E293B;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Color variables */
+        :root {
+            --navy: #0A2647;
+            --teal: #2C7865;
+            --gold: #E9B741;
+            --light-bg: #F8F9FA;
+            --dark-text: #1E293B;
+            --gray-text: #475569;
+            --border-light: #E2E8F0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--navy);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #1A3A5F 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .badge {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 24px;
+            max-width: 600px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            background: #d4a832;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+        .btn-teal {
+            background: var(--teal);
+            color: white;
+        }
+
+        .btn-teal:hover {
+            background: #1f5a4a;
+            transform: translateY(-2px);
+        }
+
+        /* Section styles */
+        section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: var(--navy);
+            border-left: 5px solid var(--teal);
+            padding-left: 20px;
+        }
+
+        /* Skills grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-light);
+            transition: transform 0.2s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .skill-card h3 {
+            color: var(--teal);
+            margin-bottom: 16px;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #EFF6FF;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        /* Project cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: all 0.2s;
+            border: 1px solid var(--border-light);
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(0,0,0,0.12);
+        }
+
+        .project-content {
+            padding: 24px;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--navy);
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 12px 0;
+        }
+
+        .tech-badge {
+            background: var(--teal);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .project-links {
+            margin-top: 16px;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .project-links a {
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .project-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Info grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 28px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .info-card h3 {
+            color: var(--navy);
+            margin-bottom: 16px;
+            font-size: 1.3rem;
+        }
+
+        .contact-details a {
+            display: block;
+            color: var(--teal);
+            text-decoration: none;
+            margin: 12px 0;
+        }
+
+        .contact-details a:hover {
+            color: var(--gold);
+        }
+
+        /* Python Demo Section */
+        .python-demo {
+            background: white;
+        }
+
+        .demo-container {
+            background: #1a1a2e;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+        }
+
+        .demo-header {
+            background: #16213e;
+            padding: 12px 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .demo-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .demo-dot.red { background: #ff5f56; }
+        .demo-dot.yellow { background: #ffbd2e; }
+        .demo-dot.green { background: #27c93f; }
+
+        .demo-body {
+            padding: 24px;
+        }
+
+        .input-group {
+            background: #0f0f1a;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            color: #a0a0b0;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background: #1a1a2e;
+            border: 1px solid #2a2a3e;
+            border-radius: 8px;
+            color: white;
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--teal);
+        }
+
+        .run-btn {
+            background: var(--teal);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.2s;
+        }
+
+        .run-btn:hover {
+            background: #1f5a4a;
+            transform: translateY(-2px);
+        }
+
+        .output {
+            background: #0a0a0f;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .output pre {
+            color: #4ade80;
+            font-family: monospace;
+            white-space: pre-wrap;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+            padding: 28px;
+            margin-top: 20px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 2rem; }
+            .nav-links { 
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: var(--navy);
+                padding: 20px;
+                text-align: center;
+                gap: 15px;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .container { padding: 0 20px; }
+            section { padding: 50px 0; }
+            .skills-grid, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">THEO <span>GAOPALELWE</span></div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#python-demo">Python Demo</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge">BIDA Student (2026) | Aspiring Backend & Big Data Developer</div>
+                    <h1>Theo Arnold Gaopalelwe</h1>
+                    <p>Data Analytics • Python • SQL • Web Development • Cloud Fundamentals • Building 3 Apps</p>
+                    <div class="btn-group">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>📊 Data & Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python (Pandas)</span>
+                        <span class="skill-tag">SQL (Advanced)</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Data Cleaning</span>
+                        <span class="skill-tag">Advanced Analytics</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>💻 Web & Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML/CSS/JS</span>
+                        <span class="skill-tag">Frontend Dev</span>
+                        <span class="skill-tag">Backend (Learning)</span>
+                        <span class="skill-tag">Database Design</span>
+                        <span class="skill-tag">MS Access</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>☁️ Cloud & Big Data</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Cloud Modelling</span>
+                        <span class="skill-tag">IaaS/PaaS/SaaS</span>
+                        <span class="skill-tag">Big Data (Upcoming)</span>
+                        <span class="skill-tag">ML (Next Goal)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" style="background: #F8F9FA;">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Student Marks System</div>
+                        <p>Python application to add student marks, subjects, and calculate averages. Includes data validation and report generation.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">File I/O</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#python-demo">🐍 Live Demo</a>
+                            <a href="#">📂 GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Enterprise & Student DB</div>
+                        <p>Designed and implemented relational databases using SQL with complex queries, joins, and aggregations.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">SQL</span>
+                            <span class="tech-badge">Database Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">📂 GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Data Cleaning (Banks/Enterprises)</div>
+                        <p>Cleaned and transformed messy datasets – handled missing values, outliers, and standardized formats.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Pandas</span>
+                            <span class="tech-badge">Excel</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">📂 GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Interactive Dashboards</div>
+                        <p>Created business dashboards in Power BI and Excel visualizing KPIs, trends, and insights.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Power BI</span>
+                            <span class="tech-badge">Excel</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">📊 View</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Multiple Websites</div>
+                        <p>Built responsive, modern websites showcasing frontend skills. Deployed and optimized.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">HTML/CSS/JS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#">🌐 Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">3 Apps (In Development)</div>
+                        <p>Currently building three applications – focusing on backend integration, databases, and user-friendly interfaces.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Full-stack</span>
+                            <span class="tech-badge">Coming 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Python Live Demo Section -->
+    <section id="python-demo" class="python-demo">
+        <div class="container">
+            <h2 class="section-title">🐍 Live Python Demo: Student Marks System</h2>
+            <div class="demo-container">
+                <div class="demo-header">
+                    <div class="demo-dot red"></div>
+                    <div class="demo-dot yellow"></div>
+                    <div class="demo-dot green"></div>
+                    <span style="color: #666; margin-left: 10px; font-size: 0.8rem;">python marks_system.py</span>
+                </div>
+                <div class="demo-body">
+                    <div class="input-group">
+                        <label>📝 Enter student marks (comma-separated):</label>
+                        <input type="text" id="marksInput" value="85, 90, 78, 92, 88" placeholder="e.g., 85, 90, 78">
+                        <button class="run-btn" onclick="runPythonDemo()">▶ Run Python Code</button>
+                    </div>
+                    <div class="output" id="outputArea">
+                        <pre id="outputText">Click "Run Python Code" to see the Student Marks System in action...</pre>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px; color: #666; font-size: 0.85rem;">
+                💡 This simulates my actual Python Student Marks System. Try changing the numbers!
+            </p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" style="background: #F8F9FA;">
+        <div class="container">
+            <h2 class="section-title">Education & Journey</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🎓 Botswana Accountancy College</h3>
+                    <p><strong>BIDA Degree</strong> (Business Intelligence & Data Analytics)<br>
+                    Year 2 → Year 3 (Next Semester)<br>
+                    <strong style="color: var(--teal);">📚 Upcoming: Big Data Analytics module</strong></p>
+                </div>
+                <div class="info-card">
+                    <h3>☁️ Cloud & Advanced Analytics</h3>
+                    <p>✓ Cloud fundamentals (modelling, deployment concepts)<br>
+                    ✓ Advanced data analytics techniques<br>
+                    <strong style="color: var(--teal);">🔜 Machine Learning (next learning goal)</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>📫 Reach Out</h3>
+                    <div class="contact-details">
+                        <a href="mailto:theo.gaopalelwe@bac.ac.bw">📧 theo.gaopalelwe@bac.ac.bw</a>
+                        <a href="#">🔗 LinkedIn: Theo Gaopalelwe</a>
+                        <a href="#">💻 GitHub: @theogaopalelwe</a>
+                        <p style="margin-top: 16px; color: #666;">📍 Gaborone, Botswana</p>
+                    </div>
+                </div>
+                <div class="info-card" style="background: var(--navy); color: white;">
+                    <h3 style="color: var(--gold);">📄 What I'm Looking For</h3>
+                    <p style="margin-bottom: 20px;">
+                        Internships, graduate roles, or collaborative projects in 
+                        <strong>Backend Development, Data Analytics, or Big Data</strong>.
+                        Open to learning and building impactful solutions.
+                    </p>
+                    <button class="btn btn-primary" onclick="downloadResume()" style="background: var(--gold); color: var(--navy);">
+                        📄 Download Resume (PDF)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Theo Arnold Gaopalelwe — Building data & backend systems for tomorrow.</p>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Python Demo Function
+    function runPythonDemo() {
+        const inputElement = document.getElementById('marksInput');
+        const outputElement = document.getElementById('outputText');
+        
+        let marksInput = inputElement.value;
+        let marksArray = marksInput.split(',').map(m => parseInt(m.trim()));
+        
+        // Validate input
+        if (marksArray.some(isNaN)) {
+            outputElement.innerHTML = '❌ Error: Please enter valid numbers separated by commas.\nExample: 85, 90, 78, 92, 88';
+            return;
+        }
+        
+        if (marksArray.length === 0) {
+            outputElement.innerHTML = '❌ Error: Please enter at least one mark.';
+            return;
+        }
+        
+        // Calculate statistics
+        let sum = marksArray.reduce((a, b) => a + b, 0);
+        let average = sum / marksArray.length;
+        let max = Math.max(...marksArray);
+        let min = Math.min(...marksArray);
+        let status = average >= 50 ? '✅ PASSING' : '⚠️ NEEDS IMPROVEMENT';
+        
+        // Generate output
+        let output = `
+╔════════════════════════════════════════╗
+║     STUDENT MARKS ANALYSIS SYSTEM      ║
+╠════════════════════════════════════════╣
+║ 📝 Marks: ${marksArray.join(', ')}
+║
+║ 👥 Total Students: ${marksArray.length}
+║ 📈 Highest Score: ${max}
+║ 📉 Lowest Score: ${min}
+║ 📊 Average Score: ${average.toFixed(2)}
+║
+║ 🎓 Status: ${status}
+╚════════════════════════════════════════╝
+        `;
+        
+        outputElement.innerHTML = output;
+    }
+    
+    // Resume download function
+    function downloadResume() {
+        // Create a sample resume - replace with your actual resume
+        alert("📄 Resume Download\n\nTo add your actual resume:\n1. Place your resume PDF in the same folder as this website\n2. Name it 'resume.pdf'\n3. The download button will work automatically\n\nAlternatively, contact me directly for my latest resume.");
+        
+        // If you have a resume.pdf file, uncomment this:
+        // window.location.href = 'resume.pdf';
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Run demo on page load with default values
+    window.addEventListener('load', () => {
+        runPythonDemo();
+    });
+</script>
+
+</body>
+</html>
