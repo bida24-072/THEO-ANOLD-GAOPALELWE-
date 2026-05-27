@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-light text-dark;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold text-navy px-6 py-3 rounded-full font-semibold transition-all hover:bg-opacity-90 hover:-translate-y-0.5;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-white text-white px-6 py-3 rounded-full font-semibold transition-all hover:bg-white hover:text-navy;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-navy mb-10 border-l-4 border-teal pl-5;
+  }
+  
+  .skill-tag {
+    @apply bg-blue-50 text-navy px-3 py-1.5 rounded-full text-sm font-medium;
+  }
+  
+  .tech-badge {
+    @apply bg-teal text-white px-3 py-1 rounded-full text-xs font-semibold;
+  }
+}
