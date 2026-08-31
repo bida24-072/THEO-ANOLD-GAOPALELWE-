@@ -37,4 +37,153 @@
     .nav-links > a:hover { color: #FFFFFF; background: rgba(255, 255, 255, 0.05); }
     .nav-links > a.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.08); }
     .nav-cta { background: linear-gradient(135deg, #007BFF, #00D4FF); color: #0A0A0A !important; padding: 10px 24px !important; border-radius: 60px !important; font-weight: 700 !important; transition: 0.3s ease !important; }
-    .nav-cta:hover { transform: scale(1.04) !important; box-shadow: 0 0 20px rgba(0,
+    .nav-cta:hover { transform: scale(1.04) !important; box-shadow: 0 0 20px rgba(0, 123, 255, 0.4) !important; }
+    .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; background: none; border: none; }
+    .menu-toggle span { display: block; width: 28px; height: 3px; background: #FFFFFF; border-radius: 3px; transition: 0.3s ease; }
+
+    .page-section { padding: 80px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.03); }
+    .page-section:last-of-type { border-bottom: none; }
+    .page-headline { font-size: 3.2rem; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    .about-grid .glass-card { grid-column: span 1; }
+    .about-grid .glass-card:last-child { grid-column: 1 / -1; text-align: center; }
+
+    footer { padding: 40px 0 30px 0; border-top: 1px solid rgba(255, 255, 255, 0.06); margin-top: 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+    .footer-brand .logo { font-size: 1.8rem; margin-bottom: 0.2rem; }
+    .footer-brand p { color: #B0B0B0; font-size: 0.95rem; }
+    .footer-links h5 { margin-bottom: 1rem; font-size: 1rem; color: #FFFFFF; }
+    .footer-links a { display: block; color: #B0B0B0; margin-bottom: 0.6rem; font-size: 0.9rem; transition: 0.3s ease; }
+    .footer-links a:hover { color: #FFFFFF; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; color: #B0B0B0; font-size: 0.85rem; }
+
+    @media (max-width: 992px) {
+      .nav-links { display: none; flex-direction: column; width: 100%; background: rgba(10, 10, 10, 0.98); padding: 1rem 0; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.06); margin-top: 1rem; }
+      .nav-links.active { display: flex; }
+      .nav-links > a { width: 100%; padding: 12px 20px; }
+      .menu-toggle { display: flex; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-grid .glass-card { grid-column: 1 !important; }
+    }
+    @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } .page-headline { font-size: 2.4rem; } .section-title { font-size: 2.2rem; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrapper">
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" stroke="url(#flowGrad)" stroke-width="4" />
+        <path d="M32 38 L50 56 L68 38" stroke="url(#flowGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M38 62 L50 74 L62 62" stroke="url(#flowGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+        <defs><linearGradient id="flowGrad" x1="0" y1="0" x2="100" y2="100"><stop offset="0%" stop-color="#007BFF" /><stop offset="100%" stop-color="#00D4FF" /></linearGradient></defs>
+      </svg>
+      F.L.O.W.<span>.</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="services.html">Services</a>
+      <a href="work.html">Our Work</a>
+      <a href="about.html" class="active">About</a>
+      <a href="process.html">Process</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Book a Call</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-section">
+    <div class="container">
+      <h2 class="page-headline">About F.L.O.W.</h2>
+      <p class="section-sub">We're a team of strategists, engineers, and innovators on a mission to move business forward.</p>
+      <div class="about-grid">
+        <div id="about" class="glass-card">
+          <h4>Our Story</h4>
+          <p style="color:#B0B0B0;">F.L.O.W. was founded on a simple observation: technology should be an enabler, not an obstacle. We combined deep technical expertise with a strategic, business-first mindset. Our name isn't just an acronym; it's a promise. We bring Future-ready solutions, Logic-driven strategies, and Operational excellence to a Worldwide clientele. We keep business moving forward.</p>
+        </div>
+        <div id="team" class="glass-card">
+          <h4>What F.L.O.W. Means</h4>
+          <p><strong style="color:#00D4FF;">Future:</strong> We build for tomorrow's opportunities.</p>
+          <p><strong style="color:#00D4FF;">Logic:</strong> Every decision is driven by data and analysis.</p>
+          <p><strong style="color:#00D4FF;">Operations:</strong> We optimize the engine of your business.</p>
+          <p><strong style="color:#00D4FF;">Worldwide:</strong> Our expertise transcends borders.</p>
+        </div>
+        <div id="careers" class="glass-card">
+          <h4>Mission &amp; Values</h4>
+          <p><strong>Mission:</strong> Empower businesses to achieve their full potential through innovative, reliable, and strategic technology solutions.</p>
+          <p><strong>Values:</strong> Logic · Future · Worldwide</p>
+        </div>
+        <div id="contact" class="glass-card">
+          <h4>Founder</h4>
+          <div style="font-size:4rem; opacity:0.3; margin:0.5rem 0;">👤</div>
+          <p><strong>[Founder's Name]</strong><br />CEO &amp; Founder, F.L.O.W.</p>
+          <p style="color:#B0B0B0; font-style:italic;">"We built F.L.O.W. to be the partner that businesses can trust to navigate complexity and build a future-proof foundation for growth."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:36px; height:36px;">
+            <circle cx="50" cy="50" r="48" stroke="url(#flowGrad2)" stroke-width="4" />
+            <path d="M32 38 L50 56 L68 38" stroke="url(#flowGrad2)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M38 62 L50 74 L62 62" stroke="url(#flowGrad2)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            <defs><linearGradient id="flowGrad2" x1="0" y1="0" x2="100" y2="100"><stop offset="0%" stop-color="#007BFF" /><stop offset="100%" stop-color="#00D4FF" /></linearGradient></defs>
+          </svg>
+          F.L.O.W.<span>.</span>
+        </a>
+        <p>Moving Business Forward.</p>
+        <p style="margin-top:0.8rem; font-size:0.85rem;">© 2026 F.L.O.W. All Rights Reserved.</p>
+      </div>
+      <div class="footer-links">
+        <h5>Services</h5>
+        <a href="services.html#custom-dev">Custom Web &amp; App</a>
+        <a href="services.html#automation">Business Automation</a>
+        <a href="services.html#data-ai">Data &amp; AI</a>
+        <a href="services.html#consulting">Digital Transformation</a>
+      </div>
+      <div class="footer-links">
+        <h5>Company</h5>
+        <a href="about.html#about">About</a>
+        <a href="about.html#team">Team</a>
+        <a href="about.html#careers">Careers</a>
+        <a href="about.html#contact">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h5>Legal</h5>
+        <a href="legal.html#privacy">Privacy Policy</a>
+        <a href="legal.html#terms">Terms of Service</a>
+        <a href="legal.html#cookies">Cookie Policy</a>
+        <a href="legal.html#compliance">Compliance</a>
+        <div style="margin-top:1rem; display:flex; gap:1rem; font-size:1.4rem;">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>F.L.O.W. — Future · Logic · Operations · Worldwide</span>
+      <span>Moving Business Forward.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => { nav.classList.toggle('active'); });
+  document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { nav.classList.remove('active'); }); });
+</script>
+
+</body>
+</html>
