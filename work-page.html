@@ -22,6 +22,10 @@
     .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0, 123, 255, 0.5); }
     .btn-outline { border: 2px solid #C0C0C0; color: #FFFFFF; background: transparent; }
     .btn-outline:hover { border-color: #00D4FF; color: #00D4FF; background: rgba(255, 255, 255, 0.04); }
+    .btn-github { background: #24292e; color: #FFFFFF; border: 1px solid #4a4a4a; }
+    .btn-github:hover { background: #2f363d; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(36, 41, 46, 0.4); }
+    .btn-demo { background: rgba(0, 212, 255, 0.1); color: #00D4FF; border: 1px solid rgba(0, 212, 255, 0.2); }
+    .btn-demo:hover { background: rgba(0, 212, 255, 0.2); transform: translateY(-3px); }
     .section-title { font-size: 2.8rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1rem; }
     .section-sub { font-size: 1.2rem; color: #B0B0B0; max-width: 640px; margin: 0 auto 3rem auto; }
     .glass-card { background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 32px; padding: 2rem 1.8rem; transition: 0.3s ease; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); }
@@ -45,11 +49,139 @@
     .page-section:last-of-type { border-bottom: none; }
     .page-headline { font-size: 3.2rem; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
 
-    .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-    .case-card { text-align: left; }
-    .case-card h4 { font-size: 1.4rem; margin-bottom: 0.5rem; }
-    .case-card .tech { color: #00D4FF; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em; }
-    .case-card .result { font-weight: 700; font-size: 1.8rem; margin: 0.5rem 0; color: #00D4FF; }
+    /* ===== GITHUB PROFILE ===== */
+    .github-profile {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      margin: 2rem 0;
+      background: rgba(36, 41, 46, 0.3);
+      border-radius: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      flex-wrap: wrap;
+    }
+    .github-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #007BFF, #00D4FF);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #0A0A0A;
+      flex-shrink: 0;
+    }
+    .github-info h3 { font-size: 1.8rem; margin-bottom: 0.3rem; }
+    .github-info p { color: #B0B0B0; }
+    .github-stats { display: flex; gap: 2rem; margin-top: 0.5rem; flex-wrap: wrap; }
+    .github-stats span { color: #B0B0B0; font-size: 0.9rem; }
+    .github-stats i { color: #00D4FF; margin-right: 0.3rem; }
+
+    /* ===== REPOSITORIES ===== */
+    .repo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+    .repo-card { 
+      background: rgba(36, 41, 46, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 1.5rem;
+      transition: 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .repo-card:hover { 
+      transform: translateY(-5px);
+      border-color: rgba(0, 212, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 123, 255, 0.10);
+    }
+    .repo-card .repo-name { 
+      font-size: 1.1rem; 
+      font-weight: 600; 
+      color: #00D4FF;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .repo-card .repo-name i { font-size: 0.9rem; }
+    .repo-card .repo-desc { color: #B0B0B0; font-size: 0.9rem; margin: 0.5rem 0; flex: 1; }
+    .repo-card .repo-meta { 
+      display: flex; 
+      gap: 1.5rem; 
+      font-size: 0.8rem; 
+      color: #8B8B8B;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .repo-card .repo-meta .lang { display: flex; align-items: center; gap: 0.3rem; }
+    .repo-card .repo-meta .lang-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .repo-card .repo-actions {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .repo-card .repo-actions .btn-sm {
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      border-radius: 60px;
+      font-weight: 500;
+      transition: 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      color: #B0B0B0;
+    }
+    .repo-card .repo-actions .btn-sm:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+    }
+    .repo-card .repo-actions .btn-sm.primary {
+      background: rgba(0, 212, 255, 0.1);
+      border-color: rgba(0, 212, 255, 0.2);
+      color: #00D4FF;
+    }
+    .repo-card .repo-actions .btn-sm.primary:hover {
+      background: rgba(0, 212, 255, 0.2);
+    }
+
+    .lang-html { background: #E34F26; }
+    .lang-js { background: #F7DF1E; }
+    .lang-ts { background: #3178C6; }
+    .lang-python { background: #3776AB; }
+    .lang-css { background: #563D7C; }
+    .lang-java { background: #b07219; }
+    .lang-php { background: #777BB4; }
+    .lang-ruby { background: #CC342D; }
+    .lang-go { background: #00ADD8; }
+    .lang-rust { background: #DEA584; }
+
+    /* ===== ACHIEVEMENTS ===== */
+    .achievements-grid { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 1rem; 
+      margin-top: 1.5rem;
+      justify-content: center;
+    }
+    .achievement-badge {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 60px;
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: #B0B0B0;
+    }
+    .achievement-badge i { color: #FFD700; }
+    .achievement-badge .count { color: #FFFFFF; font-weight: 600; }
 
     footer { padding: 40px 0 30px 0; border-top: 1px solid rgba(255, 255, 255, 0.06); margin-top: 2rem; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
@@ -66,6 +198,8 @@
       .nav-links > a { width: 100%; padding: 12px 20px; }
       .menu-toggle { display: flex; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
+      .github-profile { flex-direction: column; text-align: center; }
+      .github-stats { justify-content: center; }
     }
     @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } .page-headline { font-size: 2.4rem; } .section-title { font-size: 2.2rem; } }
   </style>
@@ -85,23 +219,24 @@
     </a>
     <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="navLinks">
-      <a href="services.html">Services</a>
-      <a href="work.html" class="active">Our Work</a>
-      <a href="about.html">About</a>
-      <a href="process.html">Process</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="contact.html">Contact</a>
-      <a href="contact.html" class="nav-cta">Book a Call</a>
+      <a href="services-page.html">Services</a>
+      <a href="work-page.html" class="active">Our Work</a>
+      <a href="about-page.html">About</a>
+      <a href="process-page.html">Process</a>
+      <a href="pricing-page.html">Pricing</a>
+      <a href="contact-page.html">Contact</a>
+      <a href="contact-page.html" class="nav-cta">Book a Call</a>
     </nav>
   </div>
 </header>
 
 <main>
+  <!-- ===== CASE STUDIES SECTION ===== -->
   <section class="page-section">
     <div class="container">
       <h2 class="page-headline">Our Work</h2>
       <p class="section-sub">Real results from real partnerships. Here are just a few examples of how we've helped businesses find their flow.</p>
-      <div class="case-grid">
+      <div class="case-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
         <div class="glass-card case-card">
           <h4>NeoBank Africa</h4>
           <p><strong>Problem:</strong> Slow manual KYC onboarding led to high drop-off.</p>
@@ -127,13 +262,331 @@
           <p>+20% driver productivity</p>
         </div>
       </div>
-      <div style="margin-top: 3rem; text-align: center;">
-        <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+    </div>
+  </section>
+
+  <!-- ===== GITHUB PORTFOLIO SECTION ===== -->
+  <section class="page-section">
+    <div class="container">
+      <h2 class="page-headline">GitHub Portfolio</h2>
+      <p class="section-sub">Exploring the intersection of technology and innovation through open-source projects and contributions.</p>
+
+      <!-- GitHub Profile -->
+      <div class="github-profile">
+        <div class="github-avatar">TG</div>
+        <div class="github-info">
+          <h3>
+            <i class="fab fa-github" style="color:#00D4FF;"></i> 
+            THEO-ARNOLD-GAOPALELWE
+          </h3>
+          <p>BIDA Student · Full-Stack Developer · Open Source Enthusiast</p>
+          <div class="github-stats">
+            <span><i class="fas fa-code"></i> 17+ Repositories</span>
+            <span><i class="fas fa-user-friends"></i> 1 Follower · 0 Following</span>
+            <span><i class="fas fa-trophy"></i> bida24-072</span>
+          </div>
+          <div style="margin-top:0.8rem; display: flex; gap: 0.8rem; flex-wrap: wrap;">
+            <a href="https://github.com/THEO-ARNOLD-GAOPALELWE" target="_blank" class="btn btn-github">
+              <i class="fab fa-github"></i> View Profile
+            </a>
+          </div>
+        </div>
       </div>
+
+      <!-- All Repositories -->
+      <h3 style="font-size: 1.6rem; margin: 2rem 0 1rem;">
+        <i class="fas fa-folder-open" style="color:#00D4FF;"></i> 
+        All Projects & Repositories
+      </h3>
+      <div class="repo-grid">
+        <!-- pulatrack-bw -->
+        <div class="repo-card">
+          <div class="repo-name">
+            <i class="fas fa-credit-card"></i> pulatrack-bw
+          </div>
+          <div class="repo-desc">Financial tracking and management application for Botswana users. Built with modern web technologies.</div>
+          <div class="repo-meta">
+            <span class="lang"><span class="lang-dot lang-js"></span> JavaScript</span>
+            <span><i class="far fa-star"></i> Star</span>
+          </div>
+          <div class="repo-actions">
+            <a href="https://github.com/bida24-072/pulatrack-bw" target="_blank" class="btn-sm primary"><i class="fab fa-github"></i> View</a>
+            <a href="#" class="btn-sm"><i class="fas fa-globe"></i> Demo</a>
+          </div>
+        </div>
+
+        <!-- Anold-assistant- -->
+        <div class="repo-card">
+          <div class="repo-name">
+            <i class="fas fa-robot"></i> Anold-assistant-
+          </div>
+          <div class="repo-desc">Jarvis-style AI assistant — intelligent automation and task management system with voice capabilities.</div>
+          <div class="repo-meta">
+            <span class="lang"><span class="lang-dot lang-ts"></span> TypeScript</span>
+            <span><i class="far fa-star"></i> Star</span>
+          </div>
+          <div class="repo-actions">
+            <a href="https://github.com/bida24-072/Anold-assistant-" target="_blank" class="btn-sm primary"><i class="fab fa-github"></i> View</a>
+            <a href="#" class="btn-sm"><i class="fas fa-globe"></i> Demo</a>
+          </div>
+        </div>
+
+        <!-- PulaTrack-i- -->
+        <div class="repo-card">
+          <div class="repo-name">
+            <i class="fas fa-chart-line"></i> PulaTrack-i-
+          </div>
+          <div class="repo-desc">Financial tracking application built with JavaScript — helping users manage their finances effectively.</div>
+          <div class="repo-meta">
+            <span class="lang"><span class="lang-dot lang-js"></span> JavaScript</span>
+            <span><i class="far fa-star"></i> Star</span>
+          </div>
+          <div class="repo-actions">
+            <a href="https://github.com/bida24-072/PulaTrack-i-" target="_blank" class="btn-sm primary"><i class="fab fa-github"></i> View</a>
+            <a href="#" class="btn-sm"><i class="fas fa-globe"></i> Demo</a>
+          </div>
+        </div>
+
+        <!-- THEO-ANOLD-GAOPALELWE- -->
+        <div class="repo-card">
+          <div class="repo-name">
+            <i class="fas fa-user"></i> THEO-ANOLD-GAOPALELWE-
+          </div>
+          <div class="repo-desc">Website portfolio for a BIDA student — professional showcase of skills and projects.</div>
+          <div class="repo-meta">
+            <span class="lang"><span class="lang-dot lang-html"></span> HTML</span>
+            <span><i class="far fa-star"></i> Star</span>
+            <span><i class="far fa-clock"></i> Updated 1 min ago</span>
+          </div>
+          <div class="repo-actions">
+            <a href="https://github.com/bida24-072/THEO-ANOLD-GAOPALELWE-" target="_blank" class="btn-sm primary"><i class="fab fa-github"></i> View</a>
+            <a href="#" class="btn-sm"><i class="fas fa-globe"></i> Demo</a>
+          </div>
+        </div>
+
+        <!-- PulatrackV2 -->
+        <div class="repo-card">
+          <div class="repo-name">
+            <i class="fas fa-rocket"></i> PulatrackV2
+          </div>
+          <div class="repo-desc">Version 2 of PulaTrack — rebuilt with modern JavaScript frameworks and improved UX.</div>
+          <div class="repo-meta">
+            <span class="lang"><span class="lang-dot lang-js"></span> JavaScript</span>
+            <span><i class="far fa-star"></i> Star</span>
+          </div>
+          <div class="repo-actions">
+            <a href="https://github.com/bida24-072/PulatrackV2" target="_blank" class="btn-sm primary"><i class="fab fa-github"></i> View</a>
+            <a href="#" class="btn-sm"><i class="fas fa-globe"></i> Demo</a>
+          </div>
+        </div>
+
+        <!-- website-portfolio -->
+        <div class="repo-card">
+          <div class="repo-name">
+            <i class="fas fa-briefcase"></i> website-portfolio
+          </div>
+          <div class="repo-desc">Professional portfolio website showcasing web development projects and skills.</div>
+          <div class="repo-meta">
+            <span class="lang"><span class="lang-dot lang-html"></span> HTML</span>
+            <span><i class="far fa-star"></i> Star</span>
+          </div>
+          <div class="repo-actions">
+            <a href="https://github.com/bida24-072/website-portfolio" target="_blank" class="btn-sm primary"><i class="fab fa-github"></i> View</a>
+            <a href="https://bida24-072.github.io/sefalana-demo-web/" class="btn-sm"><i class="fas fa-globe"></i> Demo</a>
+          </div>
+        </div>
+
+        <!-- sefalana-demo-web -->
+        <div class="repo-card">
+          <div class="repo-name">
+            <i class="fas fa-globe"></i> sefalana-demo-web
+          </div>
+          <div class="repo-desc">Demonstration website for Sefalana — showcasing modern web development practices.</div>
+          <div class="repo-meta">
+            <span class="lang"><span class="lang-dot lang-html"></span> HTML</span>
+            <span><i class="far fa-star"></i> Star</span>
+            <span><i class="far fa-clock"></i> Updated 4 days ago</span>
+          </div>
+          <div class="repo-actions">
+            <a href="https://github.com/bida24-072/sefalana-demo-web" target="_blank" class="btn-sm primary"><i class="fab fa-github"></i> View</a>
+            <a href="#" class="btn-sm"><i class="fas fa-globe"></i> Demo</a>
+          </div>
+        </div>
+
+        <!-- CampusScope -->
+        <div class="repo-card">
+          <div class="repo-name">
+            <i class="fas fa-university"></i> CampusScope
+          </div>
+          <div class="repo-desc">Campus management and student engagement platform for higher education institutions.</div>
+          <div class="repo-meta">
+            <span class="lang"><span class="lang-dot lang-js"></span> JavaScript</span>
+            <span><i class="far fa-star"></i> Star</span>
+          </div>
+          <div class="repo-actions">
+            <a href="https://github.com/bida24-072/CampusScope" target="_blank" class="btn-sm primary"><i class="fab fa-github"></i> View</a>
+            <a href="#" class="btn-sm"><i class="fas fa-globe"></i> Demo</a>
+          </div>
+        </div>
+
+        <!-- Arnold-s-Garage -->
+        <div class="repo-card">
+          <div class="repo-name">
+            <i class="fas fa-car"></i> Arnold-s-Garage
+          </div>
+          <div class="repo-desc">Vehicle management and garage tracking system — inventory, repairs, and customer management.</div>
+          <div class="repo-meta">
+            <span class="lang"><span class="lang-dot lang-php"></span> PHP</span>
+            <span><i class="far fa-star"></i> Star</span>
+          </div>
+          <div class="repo-actions">
+            <a href="https://github.com/bida24-072/Arnold-s-Garage" target="_blank" class="btn-sm primary"><i class="fab fa-github"></i> View</a>
+            <a href="#" class="btn-sm"><i class="fas fa-globe"></i> Demo</a>
+          </div>
+        </div>
+
+        <!-- my-github-page -->
+        <div class="repo-card">
+          <div class="repo-name">
+            <i class="fas fa-code-branch"></i> my-github-page
+          </div>
+          <div class="repo-desc">Personal GitHub Pages profile — custom landing page with project highlights.</div>
+          <div class="repo-meta">
+            <span class="lang"><span class="lang-dot lang-html"></span> HTML</span>
+            <span><i class="far fa-star"></i> Star</span>
+          </div>
+          <div class="repo-actions">
+            <a href="https://github.com/bida24-072/my-github-page" target="_blank" class="btn-sm primary"><i class="fab fa-github"></i> View</a>
+            <a href="#" class="btn-sm"><i class="fas fa-globe"></i> Demo</a>
+          </div>
+        </div>
+
+        <!-- PulaTrack-ii- -->
+        <div class="repo-card">
+          <div class="repo-name">
+            <i class="fas fa-lock"></i> PulaTrack-ii-
+          </div>
+          <div class="repo-desc">Enhanced version of PulaTrack — premium financial management platform (private repository).</div>
+          <div class="repo-meta">
+            <span class="lang"><span class="lang-dot lang-js"></span> JavaScript</span>
+            <span><i class="fas fa-lock" style="color:#8B8B8B;"></i> Private</span>
+          </div>
+          <div class="repo-actions">
+            <a href="https://github.com/bida24-072/PulaTrack-ii-" target="_blank" class="btn-sm primary"><i class="fab fa-github"></i> View</a>
+          </div>
+        </div>
+
+        <!-- pulatrack -->
+        <div class="repo-card">
+          <div class="repo-name">
+            <i class="fas fa-coins"></i> pulatrack
+          </div>
+          <div class="repo-desc">Core financial tracking application — initial version of the PulaTrack project.</div>
+          <div class="repo-meta">
+            <span class="lang"><span class="lang-dot lang-js"></span> JavaScript</span>
+            <span><i class="far fa-star"></i> Star</span>
+          </div>
+          <div class="repo-actions">
+            <a href="https://github.com/bida24-072/pulatrack" target="_blank" class="btn-sm primary"><i class="fab fa-github"></i> View</a>
+            <a href="#" class="btn-sm"><i class="fas fa-globe"></i> Demo</a>
+          </div>
+        </div>
+
+        <!-- Arnold-Consultancy-Lecture-Agency -->
+        <div class="repo-card">
+          <div class="repo-name">
+            <i class="fas fa-chalkboard-teacher"></i> Arnold-Consultancy-Lecture-Agency
+          </div>
+          <div class="repo-desc">Consultancy and lecture agency platform — connecting experts with clients for professional development.</div>
+          <div class="repo-meta">
+            <span class="lang"><span class="lang-dot lang-php"></span> PHP</span>
+            <span><i class="far fa-star"></i> Star</span>
+          </div>
+          <div class="repo-actions">
+            <a href="https://github.com/bida24-072/Arnold-Consultancy-Lecture-Agency" target="_blank" class="btn-sm primary"><i class="fab fa-github"></i> View</a>
+            <a href="https://bida24-072.github.io/Arnold-Consultancy-Lecture-Agency/" class="btn-sm"><i class="fas fa-globe"></i> Demo</a>
+          </div>
+        </div>
+
+        <!-- contrabanunleashed -->
+        <div class="repo-card">
+          <div class="repo-name">
+            <i class="fas fa-gamepad"></i> contrabanunleashed
+          </div>
+          <div class="repo-desc">Gaming or entertainment project — exploring interactive experiences and community engagement.</div>
+          <div class="repo-meta">
+            <span class="lang"><span class="lang-dot lang-js"></span> JavaScript</span>
+            <span><i class="far fa-star"></i> Star</span>
+          </div>
+          <div class="repo-actions">
+            <a href="https://github.com/bida24-072/contrabanunleashed" target="_blank" class="btn-sm primary"><i class="fab fa-github"></i> View</a>
+            <a href="#" class="btn-sm"><i class="fas fa-globe"></i> Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievements -->
+      <div style="margin-top: 2.5rem;">
+        <h3 style="font-size:1.4rem; margin-bottom:0.5rem;">
+          <i class="fas fa-award" style="color:#FFD700;"></i> 
+          Achievements
+        </h3>
+        <div class="achievements-grid">
+          <div class="achievement-badge">
+            <i class="fas fa-code"></i> 
+            <span class="count">17+</span> Repositories
+          </div>
+          <div class="achievement-badge">
+            <i class="fas fa-star"></i> 
+            <span class="count">5</span> Stars
+          </div>
+          <div class="achievement-badge">
+            <i class="fas fa-user-friends"></i> 
+            <span class="count">1</span> Follower
+          </div>
+          <div class="achievement-badge">
+            <i class="fas fa-trophy"></i> 
+            BIDA Student — <span class="count">bida24-072</span>
+          </div>
+          <div class="achievement-badge">
+            <i class="fas fa-robot"></i> 
+            AI Assistant Project
+          </div>
+          <div class="achievement-badge">
+            <i class="fas fa-code-branch"></i> 
+            Open Source Contributor
+          </div>
+          <div class="achievement-badge">
+            <i class="fas fa-credit-card"></i> 
+            FinTech Projects
+          </div>
+          <div class="achievement-badge">
+            <i class="fas fa-university"></i> 
+            Campus Solutions
+          </div>
+        </div>
+      </div>
+
+      <!-- View All Button -->
+      <div style="margin-top: 2.5rem; text-align: center;">
+        <a href="https://github.com/bida24-072" target="_blank" class="btn btn-github" style="padding: 14px 40px;">
+          <i class="fab fa-github"></i> View All Repositories on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="page-section">
+    <div class="container" style="text-align: center;">
+      <h2 class="section-title">Ready to Build Something <span class="gradient-text">Amazing</span>?</h2>
+      <p class="section-sub" style="max-width: 500px;">Let's turn your vision into reality. We're just a click away.</p>
+      <a href="contact-page.html" class="btn btn-primary">Start Your Project</a>
     </div>
   </section>
 </main>
 
+<!-- ===== FOOTER ===== -->
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -152,17 +605,17 @@
       </div>
       <div class="footer-links">
         <h5>Services</h5>
-        <a href="services.html#custom-dev">Custom Web &amp; App</a>
-        <a href="services.html#automation">Business Automation</a>
-        <a href="services.html#data-ai">Data &amp; AI</a>
-        <a href="services.html#consulting">Digital Transformation</a>
+        <a href="services-page.html#custom-dev">Custom Web &amp; App</a>
+        <a href="services-page.html#automation">Business Automation</a>
+        <a href="services-page.html#data-ai">Data &amp; AI</a>
+        <a href="services-page.html#consulting">Digital Transformation</a>
       </div>
       <div class="footer-links">
         <h5>Company</h5>
-        <a href="about.html#about">About</a>
-        <a href="about.html#team">Team</a>
-        <a href="about.html#careers">Careers</a>
-        <a href="about.html#contact">Contact</a>
+        <a href="about-page.html#about">About</a>
+        <a href="about-page.html#team">Team</a>
+        <a href="about-page.html#careers">Careers</a>
+        <a href="about-page.html#contact">Contact</a>
       </div>
       <div class="footer-links">
         <h5>Legal</h5>
@@ -173,6 +626,7 @@
         <div style="margin-top:1rem; display:flex; gap:1rem; font-size:1.4rem;">
           <a href="#"><i class="fab fa-linkedin"></i></a>
           <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://github.com/THEO-ARNOLD-GAOPALELWE" target="_blank"><i class="fab fa-github"></i></a>
         </div>
       </div>
     </div>
