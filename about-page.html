@@ -37,7 +37,7 @@
     .nav-links > a:hover { color: #FFFFFF; background: rgba(255, 255, 255, 0.05); }
     .nav-links > a.active { color: #FFFFFF; background: rgba(255, 255, 255, 0.08); }
     .nav-cta { background: linear-gradient(135deg, #007BFF, #00D4FF); color: #0A0A0A !important; padding: 10px 24px !important; border-radius: 60px !important; font-weight: 700 !important; transition: 0.3s ease !important; }
-    .nav-cta:hover { transform: scale(1.04) !important; box-shadow: 0 0 20px rgba(0, 123, 255, 0.4) !important; }
+    .nav-cta:hover { transform: scale(1.04) !important; box-shadow: 0 0 20px rgba(0, 123, 255, 0.4) !important; background: linear-gradient(135deg, #007BFF, #00D4FF) !important; color: #0A0A0A !important; }
     .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; background: none; border: none; }
     .menu-toggle span { display: block; width: 28px; height: 3px; background: #FFFFFF; border-radius: 3px; transition: 0.3s ease; }
 
@@ -47,7 +47,120 @@
 
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
     .about-grid .glass-card { grid-column: span 1; }
-    .about-grid .glass-card:last-child { grid-column: 1 / -1; text-align: center; }
+
+    /* Founder Card Styles */
+    .founder-card {
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .founder-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(0, 123, 255, 0.08), transparent 70%);
+      pointer-events: none;
+    }
+    .founder-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #0A0A0A;
+      background: linear-gradient(135deg, #007BFF, #00D4FF);
+      border: 3px solid rgba(0, 212, 255, 0.3);
+      box-shadow: 0 0 40px rgba(0, 123, 255, 0.2);
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .founder-avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .founder-card h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .founder-card .founder-title {
+      color: #00D4FF;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .founder-card .founder-quote {
+      color: #B0B0B0;
+      font-style: italic;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+      padding: 0 0.5rem;
+    }
+    .founder-card .founder-quote::before {
+      content: '"';
+      font-size: 2rem;
+      color: #00D4FF;
+      opacity: 0.3;
+      position: absolute;
+      top: -0.5rem;
+      left: -0.5rem;
+    }
+    .founder-card .founder-badge {
+      display: inline-block;
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid rgba(0, 212, 255, 0.15);
+      padding: 0.2rem 1rem;
+      border-radius: 60px;
+      font-size: 0.75rem;
+      color: #00D4FF;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+    .founder-card .founder-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .founder-card .founder-social a {
+      color: #B0B0B0;
+      font-size: 1.2rem;
+      transition: 0.3s ease;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.03);
+    }
+    .founder-card .founder-social a:hover {
+      color: #00D4FF;
+      border-color: #00D4FF;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 212, 255, 0.15);
+    }
 
     footer { padding: 40px 0 30px 0; border-top: 1px solid rgba(255, 255, 255, 0.06); margin-top: 2rem; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
@@ -85,13 +198,13 @@
     </a>
     <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="navLinks">
-      <a href="services-page.html">Services</a>
-      <a href="work-page.html">Our Work</a>
-      <a href="about-page.html" class="active">About</a>
-      <a href="process-page.html">Process</a>
-      <a href="pricing-page.html">Pricing</a>
-      <a href="contact-page.html">Contact</a>
-      <a href="contact-page.html" class="nav-cta">Book a Call</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Our Work</a>
+      <a href="about.html" class="active">About</a>
+      <a href="process.html">Process</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Book a Call</a>
     </nav>
   </div>
 </header>
@@ -101,6 +214,7 @@
     <div class="container">
       <h2 class="page-headline">About F.L.O.W.</h2>
       <p class="section-sub">We're a team of strategists, engineers, and innovators on a mission to move business forward.</p>
+      
       <div class="about-grid">
         <div id="about" class="glass-card">
           <h4>Our Story</h4>
@@ -118,25 +232,84 @@
           <p><strong>Mission:</strong> Empower businesses to achieve their full potential through innovative, reliable, and strategic technology solutions.</p>
           <p><strong>Values:</strong> Logic · Future · Worldwide</p>
         </div>
-        <div id="contact" class="glass-card">
-          <h4>Founder</h4>
-          <div style="font-size:4rem; opacity:0.3; margin:0.5rem 0;">👤</div>
-          <div class="founder-avatar">
-  <img src="main/Media%20(2).jpg/Media%20(1).jpg" alt="BOKANG" />
-</div>
-          <p><strong>BOKANG</strong><br />CEO &amp; Founder, F.L.O.W.</p>
-          <p style="color:#B0B0B0; font-style:italic;">"We built F.L.O.W. to be the partner that businesses can trust to navigate complexity and build a future-proof foundation for growth."</p>
+      </div>
+
+      <!-- ===== FOUNDERS SECTION ===== -->
+      <div style="margin-top: 3rem;">
+        <h3 style="font-size: 2rem; text-align: center; margin-bottom: 0.5rem;">
+          Meet the <span class="gradient-text">Founders</span>
+        </h3>
+        <p style="text-align: center; color: #B0B0B0; max-width: 500px; margin: 0 auto 1.5rem;">
+          The visionaries behind F.L.O.W. — driving innovation and building the future of business technology.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+          <!-- Founder 1 - CEO (BOKANG) -->
+          <div class="glass-card founder-card">
+            <div class="founder-avatar">
+              <!-- ============================================= -->
+              <!-- FIXED PHOTO PATH - Option 1: Relative path   -->
+              <!-- ============================================= -->
+              <img src="Media%20(2).jpg/Media%20(1).jpg" alt="BOKANG" />
+            </div>
+            <span class="founder-badge"><i class="fas fa-crown"></i> Co-Founder & CEO</span>
+            <h3>BOKANG</h3>
+            <p class="founder-title">CEO & Co-Founder, F.L.O.W.</p>
+            <p class="founder-quote">"We built F.L.O.W. to be the partner that businesses can trust to navigate complexity and build a future-proof foundation for growth."</p>
+            <div class="founder-social">
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+
+          <!-- Founder 2 - CTO (THEO ARNOLD GAOPALELWE) -->
+          <div class="glass-card founder-card">
+            <div class="founder-avatar">
+              <!-- ============================================= -->
+              <!-- FIXED PHOTO PATH - Option 1: Relative path   -->
+              <!-- ============================================= -->
+              <img src="Media%20(2).jpg/Media%20(2).jpg" alt="THEO ARNOLD GAOPALELWE" />
+            </div>
+            <span class="founder-badge"><i class="fas fa-rocket"></i> Co-Founder & CTO</span>
+            <h3>THEO ARNOLD GAOPALELWE</h3>
+            <p class="founder-title">CTO & Co-Founder, F.L.O.W.</p>
+            <p class="founder-quote">"Technology is the great equalizer. We're building solutions that empower businesses to compete on a global stage, regardless of their size or location. At F.L.O.W., we don't just write code — we architect the future."</p>
+            <div class="founder-social">
+              <a href="https://github.com/THEO-ARNOLD-GAOPALELWE" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- ===== TEAM STATS ===== -->
+      <div style="margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; text-align: center;">
+        <div class="glass-card" style="padding: 1.5rem;">
+          <div style="font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, #007BFF, #00D4FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">15+</div>
+          <p style="color: #B0B0B0; font-size: 0.9rem;">Years Combined Experience</p>
         </div>
-        <div id="contact" class="glass-card">
-          <h4>Founder</h4>
-          <div style="font-size:4rem; opacity:0.3; margin:0.5rem 0;">👤</div>
-          <div class="founder-avatar">
-  <img src="/main/Media%20(2).jpg/Media%20(2).jpg" alt="anold" />
-</div>
-          <p><strong>THEO ARNOLD GAOPALELWE</strong><br />CTO &amp; Tech personnel, F.L.O.W.</p>
-          <p style="color:#B0B0B0; font-style:italic;">"Technology is the great equalizer. We're building solutions that empower businesses to compete on a global stage, regardless of their size or location. At F.L.O.W., we don't just write code — we architect the future."</p>
+        <div class="glass-card" style="padding: 1.5rem;">
+          <div style="font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, #007BFF, #00D4FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">500+</div>
+          <p style="color: #B0B0B0; font-size: 0.9rem;">Projects Delivered</p>
         </div>
+        <div class="glass-card" style="padding: 1.5rem;">
+          <div style="font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, #007BFF, #00D4FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">150+</div>
+          <p style="color: #B0B0B0; font-size: 0.9rem;">Happy Clients</p>
+        </div>
+        <div class="glass-card" style="padding: 1.5rem;">
+          <div style="font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, #007BFF, #00D4FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">4</div>
+          <p style="color: #B0B0B0; font-size: 0.9rem;">Core Services</p>
+        </div>
+      </div>
+
+      <!-- ===== FINAL CTA ===== -->
+      <div style="margin-top: 3rem; text-align: center;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Want to <span class="gradient-text">Work With Us</span>?</h3>
+        <p style="color: #B0B0B0; margin-bottom: 1.5rem;">Let's build something amazing together.</p>
+        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
       </div>
     </div>
   </section>
@@ -160,15 +333,15 @@
       </div>
       <div class="footer-links">
         <h5>Services</h5>
-        <a href="services-page.html#custom-dev">Custom Web &amp; App</a>
-        <a href="services-page.html#automation">Business Automation</a>
-        <a href="services-page.html#data-ai">Data &amp; AI</a>
-        <a href="services-page.html#consulting">Digital Transformation</a>
+        <a href="services.html#custom-dev">Custom Web &amp; App</a>
+        <a href="services.html#automation">Business Automation</a>
+        <a href="services.html#data-ai">Data &amp; AI</a>
+        <a href="services.html#consulting">Digital Transformation</a>
       </div>
       <div class="footer-links">
         <h5>Company</h5>
-        <a href="about-page.html#about">About</a>
-        <a href="about-page.html#team">Team</a>
+        <a href="about.html#about">About</a>
+        <a href="about.html#team">Team</a>
         <a href="about.html#careers">Careers</a>
         <a href="about.html#contact">Contact</a>
       </div>
@@ -181,6 +354,7 @@
         <div style="margin-top:1rem; display:flex; gap:1rem; font-size:1.4rem;">
           <a href="#"><i class="fab fa-linkedin"></i></a>
           <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://github.com/THEO-ARNOLD-GAOPALELWE" target="_blank"><i class="fab fa-github"></i></a>
         </div>
       </div>
     </div>
