@@ -52,4 +52,177 @@
     .pricing-card ul li i { color: #00D4FF; width: 1.2rem; }
     .pricing-card .badge { background: linear-gradient(135deg, #007BFF, #00D4FF); color: #0A0A0A; font-weight: 700; padding: 4px 14px; border-radius: 60px; font-size: 0.75rem; display: inline-block; margin-bottom: 0.5rem; }
 
-    .faq-grid
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+    .faq-item h4 { margin-bottom: 0.3rem; font-size: 1.2rem; }
+    .faq-item p { color: #B0B0B0; }
+
+    footer { padding: 40px 0 30px 0; border-top: 1px solid rgba(255, 255, 255, 0.06); margin-top: 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+    .footer-brand .logo { font-size: 1.8rem; margin-bottom: 0.2rem; }
+    .footer-brand p { color: #B0B0B0; font-size: 0.95rem; }
+    .footer-links h5 { margin-bottom: 1rem; font-size: 1rem; color: #FFFFFF; }
+    .footer-links a { display: block; color: #B0B0B0; margin-bottom: 0.6rem; font-size: 0.9rem; transition: 0.3s ease; }
+    .footer-links a:hover { color: #FFFFFF; }
+    .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; color: #B0B0B0; font-size: 0.85rem; }
+
+    @media (max-width: 992px) {
+      .nav-links { display: none; flex-direction: column; width: 100%; background: rgba(10, 10, 10, 0.98); padding: 1rem 0; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.06); margin-top: 1rem; }
+      .nav-links.active { display: flex; }
+      .nav-links > a { width: 100%; padding: 12px 20px; }
+      .menu-toggle { display: flex; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } .page-headline { font-size: 2.4rem; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrapper">
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" stroke="url(#flowGrad)" stroke-width="4" />
+        <path d="M32 38 L50 56 L68 38" stroke="url(#flowGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M38 62 L50 74 L62 62" stroke="url(#flowGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+        <defs><linearGradient id="flowGrad" x1="0" y1="0" x2="100" y2="100"><stop offset="0%" stop-color="#007BFF" /><stop offset="100%" stop-color="#00D4FF" /></linearGradient></defs>
+      </svg>
+      F.L.O.W.<span>.</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="services.html">Services</a>
+      <a href="work.html">Our Work</a>
+      <a href="about.html">About</a>
+      <a href="process.html">Process</a>
+      <a href="pricing.html" class="active">Pricing</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Book a Call</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-section">
+    <div class="container">
+      <h2 class="page-headline">Pricing</h2>
+      <p class="section-sub">Transparent, flexible pricing to match your business needs and ambitions.</p>
+      <div class="pricing-grid">
+        <div class="glass-card pricing-card">
+          <span class="badge">Starter</span>
+          <h3>FLOW STARTER</h3>
+          <div class="price">$2,500 – $8,000 <small>one-time</small></div>
+          <p style="color:#B0B0B0;">For websites &amp; MVPs</p>
+          <ul>
+            <li><i class="fas fa-check"></i> Custom Web Application</li>
+            <li><i class="fas fa-check"></i> Responsive Design</li>
+            <li><i class="fas fa-check"></i> Basic SEO Setup</li>
+            <li><i class="fas fa-check"></i> Cloud Hosting Config</li>
+            <li><i class="fas fa-check"></i> Core Analytics</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline" style="width:100%;">Get a Quote</a>
+        </div>
+        <div class="glass-card pricing-card" style="border-color:#00D4FF;">
+          <span class="badge">Most Popular</span>
+          <h3>FLOW GROWTH</h3>
+          <div class="price">$3,000 <small>/month retainer</small></div>
+          <p style="color:#B0B0B0;">For apps + automation</p>
+          <ul>
+            <li><i class="fas fa-check"></i> Full-Stack Web &amp; Mobile</li>
+            <li><i class="fas fa-check"></i> Business Process Automation</li>
+            <li><i class="fas fa-check"></i> Continuous Feature Deployment</li>
+            <li><i class="fas fa-check"></i> Dedicated Project Manager</li>
+            <li><i class="fas fa-check"></i> Advanced Analytics</li>
+            <li><i class="fas fa-check"></i> Priority Support</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary" style="width:100%;">Start Your Growth Plan</a>
+        </div>
+        <div class="glass-card pricing-card">
+          <span class="badge">Enterprise</span>
+          <h3>FLOW ENTERPRISE</h3>
+          <div class="price">Custom Quote</div>
+          <p style="color:#B0B0B0;">For large systems</p>
+          <ul>
+            <li><i class="fas fa-check"></i> Custom AI &amp; Data Solutions</li>
+            <li><i class="fas fa-check"></i> Legacy System Integration</li>
+            <li><i class="fas fa-check"></i> Enterprise Security &amp; Compliance</li>
+            <li><i class="fas fa-check"></i> Multi-Cloud Architecture</li>
+            <li><i class="fas fa-check"></i> Dedicated Engineering Team</li>
+            <li><i class="fas fa-check"></i> Strategic Consulting</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline" style="width:100%;">Contact Sales</a>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div style="margin-top:4rem;">
+        <h3 style="font-size:2rem; margin-bottom:1rem;">Pricing FAQs</h3>
+        <div class="faq-grid">
+          <div class="faq-item"><h4>What's included in the one-time FLOW STARTER fee?</h4><p>Full design, development, and deployment of a website or MVP. Ongoing maintenance is not included but can be added.</p></div>
+          <div class="faq-item"><h4>What does the monthly retainer cover exactly?</h4><p>A dedicated team working on your project: new features, improvements, bug fixes, and ongoing support.</p></div>
+          <div class="faq-item"><h4>I have a complex project. How does the custom quote work?</h4><p>We'll schedule a discovery call to understand your scope and goals, then provide a detailed proposal with transparent costs.</p></div>
+          <div class="faq-item"><h4>Is there a minimum contract for the FLOW GROWTH plan?</h4><p>We generally recommend 3 months to see significant progress, but we are happy to discuss flexible terms.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:36px; height:36px;">
+            <circle cx="50" cy="50" r="48" stroke="url(#flowGrad2)" stroke-width="4" />
+            <path d="M32 38 L50 56 L68 38" stroke="url(#flowGrad2)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M38 62 L50 74 L62 62" stroke="url(#flowGrad2)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            <defs><linearGradient id="flowGrad2" x1="0" y1="0" x2="100" y2="100"><stop offset="0%" stop-color="#007BFF" /><stop offset="100%" stop-color="#00D4FF" /></linearGradient></defs>
+          </svg>
+          F.L.O.W.<span>.</span>
+        </a>
+        <p>Moving Business Forward.</p>
+        <p style="margin-top:0.8rem; font-size:0.85rem;">© 2026 F.L.O.W. All Rights Reserved.</p>
+      </div>
+      <div class="footer-links">
+        <h5>Services</h5>
+        <a href="services.html#custom-dev">Custom Web &amp; App</a>
+        <a href="services.html#automation">Business Automation</a>
+        <a href="services.html#data-ai">Data &amp; AI</a>
+        <a href="services.html#consulting">Digital Transformation</a>
+      </div>
+      <div class="footer-links">
+        <h5>Company</h5>
+        <a href="about.html#about">About</a>
+        <a href="about.html#team">Team</a>
+        <a href="about.html#careers">Careers</a>
+        <a href="about.html#contact">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h5>Legal</h5>
+        <a href="legal.html#privacy">Privacy Policy</a>
+        <a href="legal.html#terms">Terms of Service</a>
+        <a href="legal.html#cookies">Cookie Policy</a>
+        <a href="legal.html#compliance">Compliance</a>
+        <div style="margin-top:1rem; display:flex; gap:1rem; font-size:1.4rem;">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>F.L.O.W. — Future · Logic · Operations · Worldwide</span>
+      <span>Moving Business Forward.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => { nav.classList.toggle('active'); });
+  document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { nav.classList.remove('active'); }); });
+</script>
+
+</body>
+</html>
